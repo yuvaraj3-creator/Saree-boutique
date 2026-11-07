@@ -31,12 +31,51 @@ footer{background:#271720;color:#e9d8c6;padding:35px 7%;display:flex;justify-con
 @media(max-width:1050px){.sixgrid{grid-template-columns:repeat(3,1fr)}.rackitems{grid-template-columns:repeat(3,1fr)}.reels{grid-template-columns:repeat(5, minmax(120px,1fr));overflow-x:auto;padding:12px 2px 25px}.hero{padding-inline:6%}.silkCard{height:320px}}
 @media(max-width:700px){.announce{font-size:7px;letter-spacing:.12em}.header{height:68px;padding:0 5%}.seal{width:36px;height:36px;font-size:24px}.brandname{font-size:12px}.nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--ivory);padding:22px 7%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:20px}.nav.open{display:flex}.menu{display:block}.hero{display:flex;flex-direction:column;align-items:stretch;padding:58px 7% 45px;min-height:0}.hero h1{font-size:75px;margin:22px 0}.hero p{font-size:11px}.heroVisual{height:410px;margin-top:10px}.heroPhoto{height:360px;width:65%}.heroHalo{width:320px}.float.one{top:55px;left:0}.float.two{bottom:35px;right:0}.float{padding:10px 12px}.float b{font-size:18px}.section{padding:75px 6%}.sectionHead{margin-bottom:32px}.sectionHead h2{font-size:49px}.sixgrid{grid-template-columns:repeat(2,1fr);gap:18px 12px}.arch{height:225px}.trylook{grid-template-columns:1fr;gap:25px}.lookstage{height:390px}.lookmodel img{width:65%}.lookinfo h3{font-size:42px}.silkFan{justify-content:flex-start;overflow-x:auto;padding:22px 8px 38px;scroll-snap-type:x mandatory}.silkCard{flex:0 0 190px;height:315px;scroll-snap-align:center}.silkCard:nth-child(n){transform:none}.silkCard:hover{transform:translateY(-10px) scale(1.02)}.rackTop{display:block}.rackTop .sectionHead{margin-bottom:22px}.filters{justify-content:flex-start}.filter{padding:9px 11px;font-size:7px}.rackitems{grid-template-columns:repeat(2,1fr);gap:14px 10px}.hangerPhoto{height:230px}.hangerName{font-size:18px}.story{grid-template-columns:1fr;gap:25px}.storycopy h2{font-size:58px}.reels{grid-template-columns:repeat(5,145px);gap:10px}.reel{height:245px}.bridalCard{flex-basis:220px}.bridalArch{height:315px}.contact{padding:78px 7%}footer{justify-content:center;text-align:center}.footlinks{justify-content:center}.modalBox{grid-template-columns:1fr;max-width:420px}.modalBox img{height:270px;min-height:270px}.modalInfo{padding:26px}.modalInfo h3{font-size:35px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* AI virtual try-on */
+.tryonSection{padding:115px 6vw;background:#eee5d9;position:relative;overflow:hidden}
+.tryonIntro{max-width:760px;margin:0 auto 46px;text-align:center}
+.tryonIntro h2{font:500 clamp(44px,6vw,76px)/.95 var(--serif);margin:15px 0;color:var(--wine)}
+.tryonIntro p{color:var(--muted);line-height:1.8;font-size:14px}
+.tryonLayout{max-width:1120px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.tryonPanel{background:var(--paper);border:1px solid var(--line);padding:clamp(20px,3vw,34px);min-width:0}
+.tryonPanel h3{font:500 30px var(--serif);color:var(--wine);margin:0 0 8px}
+.tryonHint{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.tryonUpload{border:1px dashed #bda98e;min-height:290px;display:grid;place-items:center;text-align:center;position:relative;background:#faf6ef;overflow:hidden;cursor:pointer}
+.tryonUpload input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:2}
+.tryonUpload img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#f5eee4;display:none}
+.tryonUpload.has-image img{display:block}
+.tryonUpload.has-image .uploadPrompt{display:none}
+.uploadPrompt{padding:25px;color:var(--muted)}
+.uploadPrompt .uploadIcon{font:48px var(--serif);color:var(--gold);display:block;margin-bottom:10px}
+.uploadPrompt strong{display:block;color:var(--wine);font:500 22px var(--serif);margin-bottom:6px}
+.tryonField{display:block;margin:20px 0 8px;color:var(--wine);font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+.tryonSelect{width:100%;padding:14px 12px;border:1px solid var(--line);background:white;color:var(--ink);font:14px var(--sans);border-radius:0}
+.tryonConsent{display:flex;gap:10px;align-items:flex-start;font-size:11px;line-height:1.55;color:var(--muted);margin:18px 0}
+.tryonConsent input{margin-top:2px;accent-color:var(--wine)}
+.tryonBtn{width:100%;border:0;background:var(--wine);color:white;padding:16px 20px;letter-spacing:.13em;text-transform:uppercase;font-size:11px;transition:.3s}
+.tryonBtn:hover{background:var(--gold);color:#241713}
+.tryonBtn:disabled{opacity:.45;cursor:not-allowed}
+.tryonResult{min-height:385px;background:#f8f3eb;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;position:relative}
+.tryonResult img{width:100%;height:100%;max-height:600px;object-fit:contain;display:none}
+.tryonResult.done img{display:block}
+.tryonEmpty{text-align:center;padding:30px;color:var(--muted);max-width:300px}
+.tryonEmpty .resultIcon{font:58px var(--serif);color:#c4a879;display:block}
+.tryonEmpty strong{font:500 25px var(--serif);color:var(--wine);display:block;margin:8px 0}
+.tryonStatus{font-size:12px;color:var(--wine);margin-top:14px;min-height:18px;text-align:center}
+.tryonNote{font-size:10px;line-height:1.6;color:var(--muted);margin-top:14px}
+.tryonResult.done .tryonEmpty{display:none}
+.tryonResult.busy .resultIcon{animation:loadpulse 1.2s infinite}
+.tryonResult.busy .tryonEmpty strong{font-style:italic}
+.tryonDownload{display:none;margin-top:14px;text-align:center;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--wine);text-decoration:underline;text-underline-offset:4px}
+.tryonResult.done+.tryonStatus+.tryonDownload{display:block}
+@media(max-width:760px){.tryonSection{padding:78px 5vw}.tryonLayout{grid-template-columns:1fr}.tryonResult{min-height:330px}.tryonUpload{min-height:260px}}
 </style>
 </head>
 <body>
 <div id="loader"><div><div class="loadmark">S</div><div class="loadcaption">THE ART OF THE DRAPE</div></div></div><div class="progress" id="progress"></div>
 <div class="announce">✦ AN EXCLUSIVE EDIT OF TIMELESS SAREES &nbsp; · &nbsp; CURATED WITH LOVE &nbsp; · &nbsp; ✦</div>
-<header class="header" id="header"><a class="brand" href="#home"><span class="seal">S</span><span><span class="brandname">SAREE BOUTIQUE</span><span class="brandtag">THE ART OF THE DRAPE</span></span></a><nav class="nav" id="nav"><a href="#home">Home</a><a href="#archive">The Archive</a><a href="#silks">Pick a Silk</a><a href="#rack">The Collection</a><a href="#bridal">Bridal Edit</a><a class="navcta" href="#contact">Enquire ↗</a></nav><button class="menu" id="menu" aria-label="Open menu">☰</button></header>
+<header class="header" id="header"><a class="brand" href="#home"><span class="seal">S</span><span><span class="brandname">SAREE BOUTIQUE</span><span class="brandtag">THE ART OF THE DRAPE</span></span></a><nav class="nav" id="nav"><a href="#home">Home</a><a href="#archive">The Archive</a><a href="#silks">Pick a Silk</a><a href="#rack">The Collection</a><a href="#bridal">Bridal Edit</a><a href="#tryon">AI Try-On</a><a class="navcta" href="#contact">Enquire ↗</a></nav><button class="menu" id="menu" aria-label="Open menu">☰</button></header>
 <main>
 <section class="hero" id="home"><div class="heroCopy"><div class="eyebrow reveal">A CELEBRATION OF INDIAN ELEGANCE</div><h1 class="reveal delay1">Draped in<br><em>tradition.</em></h1><p class="reveal delay2">Some stories are woven, not written. Discover timeless sarees that bring together the beauty of heritage, the joy of colour and the grace of every woman.</p><div class="actions reveal delay3"><a class="btn" href="#rack">Explore the collection <span>↗</span></a><a class="underlink" href="#archive">Discover our world</a></div></div><div class="heroVisual reveal delay2"><div class="heroHalo"></div><span class="spark s1"></span><span class="spark s2"></span><img class="heroPhoto" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=90" alt="Traditional Indian saree drape"><div class="float one"><small>THE SIGNATURE EDIT</small><b>Timeless Silks</b></div><div class="float two"><small>MADE FOR YOUR MOMENTS</small><b>Elegance, always.</b></div></div></section>
 <div class="ticker"><div class="tickerTrack"><span>THE BEAUTY OF A SAREE</span><i>✦</i><span>WOVEN WITH HERITAGE</span><i>✦</i><span>MADE FOR YOUR MOMENTS</span><i>✦</i><span>THE ART OF THE DRAPE</span><i>✦</i><span>THE BEAUTY OF A SAREE</span><i>✦</i><span>WOVEN WITH HERITAGE</span><i>✦</i><span>MADE FOR YOUR MOMENTS</span><i>✦</i><span>THE ART OF THE DRAPE</span><i>✦</i></div></div>
@@ -71,7 +110,41 @@ footer{background:#271720;color:#e9d8c6;padding:35px 7%;display:flex;justify-con
 <div class="bridalCard reveal delay2" data-product="2"><div class="bridalArch"><img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=700&q=85" alt="Silk bridal saree"></div><h3>The Golden Vow</h3><p>PURE SILK · BRIDAL EDIT</p></div>
 <div class="bridalCard reveal delay1" data-product="3"><div class="bridalArch"><img src="https://images.unsplash.com/photo-1610189012906-4c4a6f8b7d4d?auto=format&fit=crop&w=700&q=85" alt="Classic bridal cotton silk"></div><h3>Temple Bloom</h3><p>TRADITIONAL SILK · BRIDAL EDIT</p></div>
 </div></section>
-<section class="contact" id="contact"><div class="eyebrow">YOUR NEXT FAVOURITE DRAPE AWAITS</div><h2>Let’s find your<br><em>forever saree.</em></h2><p>Tell us the occasion, the colour you love or the weave you have been dreaming of.<br>We would love to help you find the one.</p><a class="btn" id="whatsappMain" href="#" target="_blank" rel="noopener">Enquire on WhatsApp ↗</a></section>
+
+<section class="tryonSection" id="tryon">
+  <div class="tryonIntro reveal">
+    <div class="eyebrow">YOUR PERSONAL VIRTUAL FITTING ROOM</div>
+    <h2>See yourself in<br><em>the perfect drape.</em></h2>
+    <p>Upload a full-length photo, choose a saree from our collection and let AI create a virtual try-on preview for you.</p>
+  </div>
+  <div class="tryonLayout">
+    <div class="tryonPanel reveal">
+      <h3>01. Your photograph</h3>
+      <div class="tryonHint">A clear, full-length photo works best</div>
+      <label class="tryonUpload" id="tryonUpload">
+        <input type="file" id="tryonPhoto" accept="image/jpeg,image/png,image/webp">
+        <img id="tryonPhotoPreview" alt="Your uploaded photo preview">
+        <span class="uploadPrompt"><span class="uploadIcon">＋</span><strong>Upload your photo</strong><span>JPG, PNG or WEBP · Max 8 MB</span></span>
+      </label>
+      <label class="tryonField" for="tryonProduct">02. Choose your saree</label>
+      <select class="tryonSelect" id="tryonProduct"><option value="">Select a saree from the collection</option></select>
+      <label class="tryonConsent"><input type="checkbox" id="tryonConsent"><span>I confirm this is my photo or I have the person's permission to use it for this virtual try-on. I understand the image will be sent securely to our AI provider for processing.</span></label>
+      <button class="tryonBtn" id="tryonGenerate" disabled>Try this saree <span>↗</span></button>
+      <p class="tryonNote">Your uploaded photo is processed for this request and is not saved to our website. AI results are previews; actual colour, fit and drape may vary.</p>
+    </div>
+    <div class="tryonPanel reveal delay1">
+      <h3>03. Your virtual drape</h3>
+      <div class="tryonHint">Your AI-generated preview</div>
+      <div class="tryonResult" id="tryonResult">
+        <img id="tryonOutput" alt="AI virtual saree try-on result">
+        <div class="tryonEmpty"><span class="resultIcon">✧</span><strong>Your saree moment awaits</strong><span>Your preview will appear here after generation.</span></div>
+      </div>
+      <div class="tryonStatus" id="tryonStatus" aria-live="polite"></div>
+      <a class="tryonDownload" id="tryonDownload" href="#" download="saree-virtual-tryon.png">Download your preview ↓</a>
+    </div>
+  </div>
+</section>
+\n<section class="contact" id="contact"><div class="eyebrow">YOUR NEXT FAVOURITE DRAPE AWAITS</div><h2>Let’s find your<br><em>forever saree.</em></h2><p>Tell us the occasion, the colour you love or the weave you have been dreaming of.<br>We would love to help you find the one.</p><a class="btn" id="whatsappMain" href="#" target="_blank" rel="noopener">Enquire on WhatsApp ↗</a></section>
 </main>
 <footer><div><strong>SAREE BOUTIQUE</strong><br><small>THE ART OF THE DRAPE</small></div><div class="footlinks"><a href="#archive">THE ARCHIVE</a><a href="#rack">COLLECTION</a><a href="#bridal">BRIDAL EDIT</a><a href="#contact">CONTACT</a></div><small>© 2026 SAREE BOUTIQUE · MADE WITH LOVE</small></footer>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Saree details"><div class="modalBox"><button class="modalClose" id="modalClose" aria-label="Close">×</button><img id="modalImg" src="" alt="Selected saree"><div class="modalInfo"><div class="eyebrow">THE SAREE DETAIL</div><h3 id="modalName">Saree name</h3><p id="modalDesc">A beautiful drape, selected with care.</p><strong id="modalPrice">Price on request</strong><br><a class="btn" id="modalWA" href="#" target="_blank" rel="noopener">Enquire about this saree ↗</a></div></div></div>
@@ -108,6 +181,70 @@ const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecti
 window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),650));
 window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(max>0?scrollY/max*100:0)+'%';document.getElementById('header').classList.toggle('scrolled',scrollY>35)},{passive:true});
 document.getElementById('whatsappMain').href='https://wa.me/91XXXXXXXXXX?text='+encodeURIComponent('Hello! I would love to explore your saree collection. Please share the available designs.');
-document.getElementById('filmPlay').addEventListener('click',()=>{document.getElementById('bridal').scrollIntoView({behavior:'smooth'})});
+
+/* Virtual Saree Try-On — API key stays on the server */
+const tryonPhoto=document.getElementById('tryonPhoto');
+const tryonProduct=document.getElementById('tryonProduct');
+const tryonConsent=document.getElementById('tryonConsent');
+const tryonGenerate=document.getElementById('tryonGenerate');
+const tryonStatus=document.getElementById('tryonStatus');
+const tryonResult=document.getElementById('tryonResult');
+let tryonPhotoData='';
+products.forEach((p,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=p.name+' · '+p.type;tryonProduct.appendChild(o)});
+function updateTryonButton(){tryonGenerate.disabled=!(tryonPhotoData&&tryonProduct.value!==''&&tryonConsent.checked)}
+tryonPhoto.addEventListener('change',()=>{
+ const file=tryonPhoto.files&&tryonPhoto.files[0];if(!file)return;
+ if(!['image/jpeg','image/png','image/webp'].includes(file.type)){tryonStatus.textContent='Please choose a JPG, PNG or WEBP image.';return}
+ if(file.size>8*1024*1024){tryonStatus.textContent='Please upload an image smaller than 8 MB.';return}
+ const reader=new FileReader();
+ reader.onload=()=>{const img=new Image();img.onload=()=>{
+  const max=1400,scale=Math.min(1,max/Math.max(img.width,img.height));
+  const canvas=document.createElement('canvas');canvas.width=Math.round(img.width*scale);canvas.height=Math.round(img.height*scale);
+  canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);
+  tryonPhotoData=canvas.toDataURL('image/jpeg',.84);
+  document.getElementById('tryonPhotoPreview').src=tryonPhotoData;
+  document.getElementById('tryonUpload').classList.add('has-image');
+  tryonStatus.textContent='Photo ready. Choose a saree to continue.';updateTryonButton();
+ };img.src=reader.result};
+ reader.readAsDataURL(file);
+});
+tryonProduct.addEventListener('change',updateTryonButton);
+tryonConsent.addEventListener('change',updateTryonButton);
+async function waitForTryon(id){
+ const started=Date.now();
+ while(Date.now()-started<150000){
+  await new Promise(r=>setTimeout(r,2500));
+  const res=await fetch('/api/tryon?id='+encodeURIComponent(id));
+  const data=await res.json();
+  if(!res.ok)throw new Error(data.error||'Could not check generation status.');
+  if(data.status==='completed'){
+   const output=data.output&&data.output[0];if(!output)throw new Error('The AI did not return an image.');
+   const out=document.getElementById('tryonOutput');out.src=output;
+   document.getElementById('tryonDownload').href=output;
+   tryonResult.classList.remove('busy');tryonResult.classList.add('done');
+   tryonStatus.textContent='Your virtual saree preview is ready.';
+   return;
+  }
+  if(data.status==='failed')throw new Error(data.error||'Try-on generation failed. Please try another photo.');
+  tryonStatus.textContent=data.status==='in_queue'?'Your request is in the queue…':'Creating your virtual drape…';
+ }
+ throw new Error('This is taking longer than expected. Please try again in a moment.');
+}
+tryonGenerate.addEventListener('click',async()=>{
+ const p=products[Number(tryonProduct.value)];if(!p||!tryonPhotoData||!tryonConsent.checked)return;
+ tryonGenerate.disabled=true;tryonGenerate.textContent='Creating your drape…';
+ tryonStatus.textContent='Preparing your photo securely…';
+ tryonResult.classList.remove('done');tryonResult.classList.add('busy');
+ document.getElementById('tryonOutput').removeAttribute('src');
+ document.getElementById('tryonDownload').removeAttribute('href');
+ try{
+  const res=await fetch('/api/tryon',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({modelImage:tryonPhotoData,productImage:p.img})});
+  const data=await res.json();if(!res.ok)throw new Error(data.error||'Could not start virtual try-on.');
+  tryonStatus.textContent='AI is styling your saree…';
+  await waitForTryon(data.id);
+ }catch(err){tryonResult.classList.remove('busy');tryonStatus.textContent=err.message||'Something went wrong. Please try again.'}
+ finally{tryonGenerate.textContent='Try this saree ↗';updateTryonButton()}
+});
+\ndocument.getElementById('filmPlay').addEventListener('click',()=>{document.getElementById('bridal').scrollIntoView({behavior:'smooth'})});
 </script>
 </body></html>
