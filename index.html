@@ -13,6 +13,7 @@
 <title>Saree Boutique — The Art of the Drape</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+<link rel="prefetch" href="/about.html" as="document">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -116,7 +117,7 @@ function setLook(i){lookIndex=(i+looks.length)%looks.length;const stage=document
 document.getElementById('lookPrev').addEventListener('click',()=>setLook(lookIndex-1));document.getElementById('lookNext').addEventListener('click',()=>setLook(lookIndex+1));
 const menu=document.getElementById('menu'),nav=document.getElementById('nav');menu.addEventListener('click',()=>nav.classList.toggle('open'));const navLinks=[...nav.querySelectorAll('a:not(.navcta)')];function selectNav(link){navLinks.forEach(item=>item.classList.toggle('selected',item===link))}navLinks.forEach(link=>link.addEventListener('click',()=>{selectNav(link);nav.classList.remove('open')}));const initialNav=navLinks.find(link=>link.getAttribute('href')===location.hash);if(initialNav)selectNav(initialNav);
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),650));
+document.addEventListener('DOMContentLoaded',()=>{requestAnimationFrame(()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),100))},{once:true});
 window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(max>0?scrollY/max*100:0)+'%';document.getElementById('header').classList.toggle('scrolled',scrollY>35)},{passive:true});
 document.getElementById('whatsappMain').href='https://wa.me/91XXXXXXXXXX?text='+encodeURIComponent('Hello! I would love to explore your saree collection. Please share the available designs.');
 
