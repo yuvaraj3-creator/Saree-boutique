@@ -135,6 +135,17 @@ footer small{font-size:8px;letter-spacing:.16em;color:#c7a879}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
+
+/* Keep the modal close affordance outside the video frame, never over the saree footage. */
+.videoModal{padding:64px 16px 18px}
+.videoModalInner{overflow:visible}
+.videoClose{top:-49px;right:0;width:34px;height:34px;border:1px solid #d6bd8e;background:#5b1d31;color:#fff;box-shadow:none}
+@media(max-width:700px){
+ .videoModal{padding:62px 12px 14px}
+ .videoModalInner{width:min(390px,calc(56.25dvh - 27px),calc(100vw - 28px))}
+ .videoClose{top:-46px;right:0;width:34px;height:34px}
+}
+
 </style>
 </head>
 <body>
